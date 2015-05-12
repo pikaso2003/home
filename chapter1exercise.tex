@@ -1,0 +1,218 @@
+\documentclass[a4j,10pt,oneside,openany]{jsbook}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{ascmac}
+\usepackage{makeidx}
+%
+\makeindex
+%
+\newcommand{\diff}{\mathrm{d}}  %diffrential
+\newcommand{\divergence}{\mathrm{div}\,}  %div
+\newcommand{\grad}{\mathrm{grad}\,}  %grad
+\newcommand{\rot}{\mathrm{rot}\,}  %Rotation
+\newcommand{\mexp}{\; \mathrm{e}\,}
+\newcommand{\bvec}[1]{\mbox{\boldmath $#1$}} %Vector
+%
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{44\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.6in}
+%
+\title{{\Huge \textbf{期間構造モデルと金利デリバティブ}}\\ {\small 第1章 \; 章末問題}}
+%\author{}
+\date{}
+%
+%
+\begin{document}
+%
+%
+\maketitle
+%\frontmatter
+%\tableofcontents
+%
+%
+%\mainmatter
+
+
+\section*{問題 \; 1.1}
+本文p4における単純複利の式
+\[  q = \frac{C}{1+\frac{r}{2}} + \frac{C}{(1+\frac{r}{2})^2} + \cdots + \frac{100+C}{(1+\frac{r}{2})^n} \]
+に従うと、
+\[ 90 = \frac{5}{1+\frac{r}{2}} + \frac{5}{(1+\frac{r}{2})^2} + \cdots + \frac{105}{(1+\frac{r}{2})^n} \]
+であり、この場合、Newton法を使用し上記式を満たす $r$ を求めると、$r \sim 13.30 \%$ (1年複利)となる。
+\\
+一方で、連続複利の式で表せば、
+\[ 90 = 5 \mexp ^{-\frac{r}{2}} + 5 \mexp ^{-r} + \cdots + 105 \mexp ^{-4r} \]
+となるので、同様に、Newton法を使用し $r$ を求めると、$r \sim 12.88 \%$（1年複利）となる。
+\vspace{2\baselineskip}
+
+\section*{問題 \; 1.2}
+本文(1.17)より、
+\[ Y = c_1 X_1 + c_2 X_2 + \cdots +C_n X_n \]
+なので、分散をとると、
+\[ V[Y] = c_{1}^{2} V[X_1] + c_{2}^{2} V[X_2] + \cdots + c_{n}^{2} V[X_n]+ \sum_{i \neq j } Cov(X_i , X_j) \; c_{i} \; c_{j} \]
+となる。
+共分散行列 $\Sigma$ が非負定値であるとは、行列 $\bvec{c} = ^{t} (c_1,c_2, \cdots , c_n)$ とすれば、\\
+2次形式 $S[\bvec{c}] = \; ^{t} \bvec{c} \; \Sigma \; \bvec{c} \geq 0 $ が成立する場合をそう呼ぶ。\\
+よって、
+\[ S[\bvec{c}] = \; ^{t} \bvec{c} \; \Sigma \; \bvec{c} = \sum_{i,j} \sigma_{ij} \; c_{i} \; c_{j} =
+c_{1}^{2} \; \sigma_{11} + c_{2}^{2} \; \sigma_{22} + \cdots + c_{n}^{2} \; \sigma_{nn}+ \sum_{i \neq j } \sigma_{ij} \; c_{i} \; c_{j} \]
+\[ \sigma_{ii} = V[X_i] \]
+\[ \sigma_{ij} = Cov(X_i , X_j) \; \; \; \; (i \neq j)\]
+から、
+\[ S[\bvec{c}] = V[Y] \]
+であり、分散は非負値であるので、$S[\bvec{c}] \geq 0 $、つまり題意が証明された。
+\vspace{2\baselineskip}
+
+\section*{問題 \; 1.3}
+\subsection*{(1)}
+$I(t)$の式を部分積分すると、
+\begin{align*}
+ I(t)	&= \int^{t}_{0} z(u) \; {\diff}u \\
+	&= \int^{t}_{0} (-t + u)^{\prime} \; z(u) \; {\diff}u \\
+	&= \Big{[} (-t + u) \; z(u) \Big{]}^{t}_{0} + \int^{t}_{0} (-t + u) \; \frac{{\diff}z(u)}{{\diff}u} \; {\diff}u \\
+	&= \int^{t}_{0} (-t + u) \; {\diff}z(u)
+\end{align*}
+\subsection*{(2)}
+\[ V[I(t)] = E[I(t)^2] - E[I(t)]^2 \]
+であるが、
+\[ E[I(t)] = 0 \]
+\begin{align*}
+E[I(t)^2]	&= E \Bigg{[} \int ^{t}_{0} \; (t-u)^2 \; {\diff}u \Bigg{]} \\
+		&= \int ^{t}_{0} \; (t-u)^2 \; {\diff}u \\
+		&= \Big{[} - \frac{(t-u)^3}{3} \Big{]}^{t}_{0} = \frac{t^3}{3}
+\end{align*}
+である。（$E[I(t)^2]$ の式における期待値演算子は括弧の中が確定的な関数であるため外せる）、\\
+よって、$V[I(t)] = \frac{t^3}{3}$ で与えられる。
+\vspace{2\baselineskip}
+
+\section*{問題 \; 1.4}
+\subsection*{(1)}
+伊藤の公式より、
+\begin{align*}
+{\diff}Y(t)		&= \frac{\partial f}{\partial X} \; {\diff}X + \frac{1}{2} \; \frac{{\partial} ^{2} f}{{\partial} X^2} \; {\diff}X^2 \\
+			&= \Big{(} \frac{\partial f}{\partial X} \; {\mu}(X) + \frac{1}{2} \; \frac{{\partial} ^{2} f}{{\partial} X^2} \; {\sigma}(X)^2
+				\Big{)} \; {\diff}t + \frac{\partial f}{\partial X} {\sigma}(X) \; {\diff}z
+\end{align*}
+と表すことができる。
+題意より、$\frac{\partial f}{\partial X} {\sigma}(X) \; {\diff}z = \sigma {\diff}z(t)$ であるので、
+\[ \frac{\partial f}{\partial X} = {\sigma} \; \frac{1}{{\sigma}(X)}\]
+であり、これを積分し、変数の置き換えを行えば、
+\[ f(x) = {\sigma} \int^{x}_{0} \; \frac{1}{\sigma (u)} {\diff}u \]
+が示される。
+
+\subsection*{(2)}
+(1)の形で確率微分方程式が記述できる時、
+\[ \mu_{Y}(X(t)) = \frac{\partial f(X)}{\partial X} \; + \; \frac{1}{2} \; \frac{{\partial} ^{2} f}{{\partial} X^2} \; \sigma(X)^2 \]
+である。ここで、Lipschitz条件より、
+\begin{align*}
+\bigl{|} \; \mu_{Y}(x) - \mu_{Y}(y) \; \bigr{|} + \bigl{|} \sigma - \sigma \bigr{|} &\leqq L \; \bigl{|} x - y \bigr{|} \\
+\Bigl{|} \; \frac{ \mu_{Y}(x) - \mu_{Y}(y) }{ x - y } \; \Bigr{|} &\leqq L
+\end{align*}
+とかけるが、平均値の定理より、
+\[ \frac{ \mu_{Y}(x) - \mu_{Y}(y) }{ x - y } = \mu^{\prime}_{Y}(y + \theta (x - y)) \;\;\;\;\; (0 \leqq \theta \leqq 1) \]
+を満たす $\theta$ が存在する。\\
+$\mu^{\prime}(X)$ が有界であり、その最大値を $M$ とすれば、
+\[ \Bigl{|} \; \frac{ \mu_{Y}(x) - \mu_{Y}(y) }{ x - y } \; \Bigr{|} = \Bigl{|} \mu^{\prime}_{Y}(y + \theta (x - y)) \Bigr{|} \leqq M \]
+と書くことができ、Lipshitz条件を満たす $L$ が存在する。\\
+以上から、$\mu^{\prime}(X)$ が有界であれば、Lipschitz条件が満たされ、確率微分方程式は解をもつことが分かる。\\
+\\
+\begin{align*}
+\mu^{\prime}(X)	&= \frac{\partial}{\partial X} \; \Bigl{(} \frac{\sigma \; \mu (X)}{\sigma (X)}
+				- \frac{\sigma (X)^2}{2} \frac{\sigma \; \frac{\partial \sigma (X)}{\partial X}}{\sigma(X)^2} \Bigr{)} \\
+				&= \frac{\partial}{\partial X} \; \Bigl{(} \frac{\sigma \; \mu (X)}{\sigma (X)}
+				- \frac{\sigma \frac{\partial \sigma (X)}{\partial X} }{2} \Bigr{)} \\
+				&= \frac{\sigma}{\sigma (X)} \; \Bigl{(} \mu ^{\prime}(X) - \frac{\mu (X) \sigma ^{\prime} (X)}{\sigma (X)}
+				- \frac{\sigma (X) \sigma ^{\prime \prime}(X)}{2} \Bigr{)} \\
+				&\leqq \frac{\sigma}{\epsilon} \; \Bigl{(} \mu ^{\prime}(X) - \frac{\mu (X) \sigma ^{\prime} (X)}{\sigma (X)}
+				- \frac{\sigma (X) \sigma ^{\prime \prime}(X)}{2} \Bigr{)}
+\end{align*}
+\\
+より、$\mu ^{\prime}(X) - \frac{\mu (X) \sigma ^{\prime} (X)}{\sigma (X)} - \frac{\sigma (X) \sigma ^{\prime \prime}(X)}{2}$
+が有界である時、解が存在することが示された。
+\vspace{2\baselineskip}
+
+\section*{問題 \; 1.5}
+\subsection*{(1)}
+確率微分方程式(1.25)より、
+\[ {\diff}x(t) = a(\kappa - x) {\diff}t + \sigma x^{\alpha} {\diff}z(t) \]
+Lipschitz条件より、
+\begin{align*}
+\bigl{|} \; a(\kappa - x) - a(\kappa - y) \; \bigr{|} + \bigl{|} \sigma x^{\alpha} - \sigma y^{\alpha}  \bigr{|}
+			&= |a|\;|x-y| + \sigma |x^{\alpha} - y^{\alpha}| \\
+			&= (|a|+\sigma) \; |x-y| \; (1 + \frac{x^{\alpha} - y^{\alpha}}{|x-y|})
+\end{align*}
+が有界であれば、題意の確率微分方程式は解をもつ。ここで、$y=0$の場合を考えてみると、\\
+\[ 1 + \frac{x^{\alpha} - y^{\alpha}}{|x-y|} = 1 + |x^{\alpha - 1}| = 1 + \frac{1}{|x^{1 - \alpha}|} \]
+であるが、$0 < 1 - \alpha \leq \frac{1}{2}$ かつ $ x \geq 0 $ から、上記は$x \to 0$ の時発散する。
+よって題意が示された。
+
+\subsection*{(2)}
+(1)と題意より、
+\begin{align*}
+\bigl{|} \sigma (x, t) - \sigma (y, t) \bigr{|} &\leq L | x -y |^\alpha \;\;\;\;  ( \alpha \geq \frac{1}{2}) \\
+| \sigma | \bigl{|} x^{\alpha} - y^{\alpha} \bigr{|} &\leq L | x -y |^\alpha
+\end{align*}
+の時に、確率微分方程式の解が存在する。\\
+ここで、$ f(x) = x^{\alpha} $ を考えてみる。
+\begin{align*}
+f^{\prime} (x) &= \alpha x^{\alpha - 1} \\
+f^{\prime \prime} (x) &= \alpha ( \alpha - 1 ) x^{\alpha - 2}
+\end{align*}
+であり、$f(x)$ は、$ 0.5 \leq \alpha \leq 1 $ の時、上に凸である。
+$ x - y = h $とすれば、
+\begin{align*}
+\bigl{|} x^{\alpha} - y^{\alpha} \bigr{|} &= \bigl{|} (y + h)^{\alpha} - y^{\alpha} \bigr{|} \\
+| x -y |^\alpha &= |h|^{\alpha}
+\end{align*}
+となるが、上に凸であることを考えると、明らかに$ \bigl{|} (y + h)^{\alpha} - y^{\alpha} \bigr{|} \leq |h|^{\alpha} $ である。\\
+$ |\sigma| \bigl{|} x^{\alpha} - y^{\alpha} \bigr{|} \leq |\sigma| |x - y|^{\alpha} $から、題意が示された。
+\vspace{2\baselineskip}
+
+\section*{問題 \; 1.6}
+\subsection*{(1)}
+\[ \ln n! = \ln n + \ln (n-1) + \cdots +\ln (1) \]
+なので、リーマン和を考えれば、
+\[ \ln n! \leq \int^{n+1}_{1} \ln y \; \diff y \]
+\subsection*{(2)}
+題意の右辺を部分積分すると、
+\[ \int^{n+1}_{1} \ln y \; \diff y = (n+1) \ln (n+1) - n \]
+となるが、左辺が $n^2$ オーダーであるのに対して、右辺は $n \; \ln n$のオーダーである。\\
+よって、十分に大きなすべての$n$に対して、
+\[ n \ln h + n \mu + n^2 \sigma ^2 \leq \int^{n+1}_{1} \ln y \; \diff y \]
+となる。
+\subsection*{(3)}
+(1)(2)より、
+\[ \ln n! \leq \int^{n+1}_{1} \ln y \; \diff y \leq n \ln h + n \mu + n^2 \sigma ^2 \]
+である。
+この時、
+\[ \exp \Bigl{(} \ln n! \Bigr{)} \leq \exp \Bigl{(} n \ln h + n \mu + n^2 \sigma ^2 \Bigr{)} \]
+\[ 1 \leq \frac{e^{n \ln h + n \mu + n^2 \sigma ^2}}{n!} \]
+となる。\\
+十分に大きなすべての$n$に対して、級数の一般項は $a_n \geq 1$ となるので、\\
+級数は正に発散することが示された。
+%\newpage
+%\printindex
+%
+%
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
