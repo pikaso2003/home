@@ -1,5 +1,5 @@
-# home
+# home of junior Quantative analyst
 
-## test 15/05/08
-* test
-
+## Since 15/05
+* mathematics
+* financial mathematics
