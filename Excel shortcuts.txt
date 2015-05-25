@@ -1,0 +1,11 @@
+[ EXCEL sheets ]
+Alt + O,C,A				width adjustment
+Alt + O,R,A				height adjustment
+Alt + E,I,S				autofil
+
+
+[ VBA ]
+Ctrl + R				Project window
+Ctrl + G				imidiate window
+F7						code window (imidiate <-> code)
+F4						property window
