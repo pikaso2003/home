@@ -2,6 +2,7 @@
 Alt + O,C,A				width adjustment
 Alt + O,R,A				height adjustment
 Alt + E,I,S				autofil
+shift + F3				insert function
 
 
 [ VBA ]
@@ -9,3 +10,19 @@ Ctrl + R				Project window
 Ctrl + G				imidiate window
 F7						code window (imidiate <-> code)
 F4						property window
+
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'   Comments :      Test
+'
+'   Arguments :     none
+'
+'   Returns :       none
+'
+'   Date        Developer       Action
+'------------------------------------------------------------------------------------------------
+'   15/05/24    Hirayu          Created
+'
+'
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
