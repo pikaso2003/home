@@ -12,6 +12,18 @@ F7						code window (imidiate <-> code)
 F4						property window
 
 
+[note] use macro recording
+.Formula
+""& variable
+.ScreenUpdating
+.PasteSpecial
+
+
+
+
+[how to use solvers in VBA]
+in VBE
+tool --> reference setting --> then select solvers 
 
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 '   Comments :      Test
