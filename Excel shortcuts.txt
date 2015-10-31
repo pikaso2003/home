@@ -10,15 +10,21 @@ Ctrl + R				Project window
 Ctrl + G				imidiate window
 F7						code window (imidiate <-> code)
 F4						property window
+F5						run (sheet: run procedure cursor exists, module: select procedure)
+shift+F9				watch
+
 
 
 [note] use macro recording
+Application.Excelfunction	* for compatibility
 .Formula
 ""& variable
 .ScreenUpdating
-.PasteSpecial
-
-
+.PasteSpecial Paste:=xlValues
+Set object=___
+Cellobject.EntireRow.Delete
+Rangeobject.Sort key1:=___
+Cellobject.Offset(i,j)	* i=j=0 -> no offset
 
 
 [how to use solvers in VBA]
