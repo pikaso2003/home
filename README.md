@@ -1,5 +1,8 @@
-# home of junior Quantative analyst
+# From Quant to Actuary
 
-## Since 15/05
+
+
 * mathematics
 * financial mathematics
+* insurance mathematics
+
