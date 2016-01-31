@@ -1,0 +1,101 @@
+\documentclass[a4j,10pt,oneside,openany]{jsbook}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[dvipdfmx,hiresbb]{graphicx}
+\usepackage{ascmac}
+\usepackage{makeidx}
+%
+%\makeindex
+%
+\newcommand{\diff}{\mathrm{d}}  %微分記号
+\newcommand{\divergence}{\mathrm{div}\,}  %ダイバージェンス
+\newcommand{\grad}{\mathrm{grad}\,}  %グラディエント
+\newcommand{\rot}{\mathrm{rot}\,}  %ローテーション
+\newcommand{\btu}{\bigtriangleup} % triangle mark
+\newcommand{\mr}{\mathrm}
+%
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{44\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.6in}
+%
+\title{{\Huge \textbf{Dr.Hongoの数理科学ゼミ　第168問}}\\}
+\author{Yuji Hiramatsu}
+\date{}
+%
+%
+%
+\begin{document}
+%
+%
+\maketitle
+%\frontmatter
+%\tableofcontents
+%
+%
+%\mainmatter
+
+%\chapter{...}
+%\begin{abstract}
+%...
+%...
+%\end{abstract}
+
+{\Huge 168問　解答}
+
+\vspace{3\baselineskip}
+
+
+{\Large (1)}
+\\
+\\
+行列$A$の固有ベクトルを$X$、固有値を$\lambda$とすると、
+\[ AX=\lambda X \]
+であるから、$(A-\lambda E)X=0$であり、固有値$\lambda$を定める行列式を考えると、
+\begin{align*}
+|A-\lambda E| 	&= \begin{vmatrix} a-\lambda & b & c \\ b & c-\lambda & a \\ c & a & b-\lambda \end{vmatrix} \\[8pt]
+			&= \begin{vmatrix} a+b+c-\lambda & b & c \\ a+b+c-\lambda & c-\lambda & a \\ a+b+c-\lambda & a & b-\lambda \end{vmatrix} \\[8pt]
+			&= (a+b+c-\lambda) \begin{vmatrix} 1 & b & c \\ 1 & c-\lambda & a \\ 1 & a & b-\lambda \end{vmatrix} \\[8pt]
+			&= (a+b+c-\lambda) \begin{vmatrix} 1 & 0 & 0 \\ 1 & c-b-\lambda & a-c \\ 1 & a-b & b-c-\lambda \end{vmatrix} \\[8pt]
+			&= (a+b+c-\lambda)\bigl( \lambda^2 - (a^2+b^2+c^2-ab-bc-ca) \bigr)
+\end{align*}
+となる。以上から、固有値は、
+\[ \lambda_{1}=\underline{a+b+c} \]
+\[ \lambda_{2}=\underline{\sqrt{a^2+b^2+c^2-ab-bc-ca}} \; \; \; \lambda_{3}=\underline{-\sqrt{a^2+b^2+c^2-ab-bc-ca}} \]
+
+\vspace{1\baselineskip}
+
+{\Large (2)}
+\\
+\\
+$\lambda_{1}=\lambda_{2}$となる場合を考える。\\
+(1)の結果をもとに、上式の両辺を二乗して式変形を施すと、
+\begin{align*}
+(a+b+c)^2	&=a^2+b^2+c^2-ab-bc-ca \\[5pt]
+\Leftrightarrow ab+bc+ca &= b(a+c)+ca = 0 \\[5pt]
+\Leftrightarrow b^2+b(a+c)+ca &= (b+a)(b+c) =b^2 
+\end{align*}
+となる。
+題意より、$a$、$b$、$c$は整数であるが、固有方程式は、3つの変数に対して対称性をもつので、$a>b>c$としても一般性を失わない。\\
+例えば、$b=1$としてみると、$b+a=1\Leftrightarrow a=0$、$b+c=1\Leftrightarrow c=0$となり、題意に反する。\\
+同様に考えて、$b=3$の時、\\
+$a+b=9$、$b+c=1$となり、
+\[ \underline{(a,b,c)=(6,3,-2)} \]
+が固有値に重解をもつ一組の例として挙げられる。\\
+ちなみに、この時の固有値は、$\lambda_{1}=7=\lambda_{2}$、$\lambda_{3}=-7$となっている。
+
+\vspace{1\baselineskip}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

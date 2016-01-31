@@ -1,0 +1,91 @@
+\documentclass[a4j,10pt,oneside,openany]{jsbook}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[dvipdfmx,hiresbb]{graphicx}
+\usepackage{ascmac}
+\usepackage{makeidx}
+\usepackage{float}
+\usepackage{wrapfig}
+%
+%\makeindex
+%
+\newcommand{\diff}{\mathrm{d}}  %微分記号
+\newcommand{\divergence}{\mathrm{div}\,}  %ダイバージェンス
+\newcommand{\grad}{\mathrm{grad}\,}  %グラディエント
+\newcommand{\rot}{\mathrm{rot}\,}  %ローテーション
+\newcommand{\btu}{\bigtriangleup} % triangle mark
+\newcommand{\mr}{\mathrm}
+%
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{44\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.6in}
+%
+\title{{\Huge \textbf{Dr.Hongoの数理科学ゼミ　第170問}}\\}
+\author{Yuji Hiramatsu}
+\date{}
+%
+%
+%
+\begin{document}
+%
+%
+\maketitle
+%\frontmatter
+%\tableofcontents
+%
+%
+%\mainmatter
+
+%\chapter{...}
+%\begin{abstract}
+%...
+%...
+%\end{abstract}
+
+{\Huge 170問　解答}
+
+\vspace{3\baselineskip}
+
+三角関数の有理関数の積分は、$t=\tan (\frac{\theta}{2})$と変数変換すれば、初等的に計算できることはよく知られた事実である。
+$t=\tan (\frac{\theta}{2})$の時、
+\begin{align*}
+\sin \theta &= \frac{2t}{1+t^2}\\
+\cos \theta &= \frac{1-t^2}{1+t^2}\\
+d\theta &= \frac{2}{1+t^2}dt
+\end{align*}
+となるので、上式を$I$、$J$に代入し積分することを考える。\\
+まず、$I$の積分を求める。上記の変数変換を利用すると、
+\begin{align*}
+I &= \int_{0}^{1} \; \frac{2 \cdot \frac{2t}{1+t^2}+2}{\frac{2t}{1+t^2}-2 \cdot \frac{1-t^2}{1+t^2}+5} \; \frac{2}{1+t^2} \; dt \\
+  &= \int_{0}^{1} \; 4 \cdot \frac{t^2+2t+1}{(7t^2+2t+3)\cdot(t^2+1)} \; dt \\
+  &= \frac{4}{5} \cdot \int_{0}^{1} \; \biggr{(} \frac{14t+2}{7t^2+2t+3}-\frac{2t}{t^2+1}+\frac{1}{t^2+1} \biggl{)} \; dt \\
+  &= \frac{4}{5} \cdot \biggr{[} \log(7t^2+2t+3)-\log(t^2+1) \biggl{]} ^{1} _{0}+\frac{4}{5} \cdot \int^{\frac{\pi}{4}}_{0}  \; dx \\
+  &= \underline{\frac{4}{5} \cdot (\log 2+\frac{\pi}{4})}
+\end{align*}
+となる。4行目第2項目の積分は、$t=\tan x$とすることでえられる。
+$J$の積分も同様にして、
+\begin{align*}
+J &= \int_{0}^{1} \frac{2 \cdot \frac{1-t^2}{1+t^2}-4}{\frac{2t}{1+t^2}-2 \cdot \frac{1-t^2}{1+t^2}+5} \; \frac{2}{1+t^2} \; dt \\
+   &= \int_{0}^{1} \; -4 \cdot \frac{3t^2+1}{(7t^2+2t+3)\cdot(t^2+1)} \; dt \\
+   &= \frac{2}{5} \cdot \int_{0}^{1} \; \biggr{(} \frac{14t+2}{7t^2+2t+3}-\frac{2t}{t^2+1}-\frac{4}{t^2+1} \biggl{)} \; dt \\
+   &= \frac{2}{5} \cdot \biggr{[} \log(7t^2+2t+3)-\log(t^2+1) \biggl{]} ^{1} _{0}-\frac{8}{5} \cdot \int^{\frac{\pi}{4}}_{0}  \; dx \\
+   &= \underline{\frac{2}{5} \cdot (\log 2-\pi)}
+\end{align*}
+\\
+ちなみに、題意より、$\frac{I}{2}+J=\int^{\frac{\pi}{2}}_{0} \; d\theta=\frac{\pi}{2}$となるはずであり、\\
+上記結果を計算してみると、$\frac{I}{2}+J=\frac{\pi}{2}$になっていることが確認できる。
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,479 @@
+\documentclass[a4paper,10pt]{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{txfonts}
+\usepackage[dvipdfmx]{graphicx}
+
+
+\begin{document}
+
+
+\title{GEOMETRIC OPTICS PRACTICE  I and II \\ ANSWER}
+\author{}
+\date{}
+\maketitle
+
+
+
+\section{}
+N個ある薄肉レンズのうち、i番目の薄肉レンズを通過する近軸光線は、通過する前の光線角度を $u_i$ 、
+通過後の光線角度を $u'_i$ 、パワーを $\Phi_i$ とすると、次の基本式を満たす。
+
+\vspace{1\baselineskip}
+
+\begin{center}
+\fbox{$
+\begin{aligned}[t]
+u'_i &= u_i - y_{ai} \Phi_i \\
+u'_i &= u_{i+1}
+\end{aligned}
+$}
+\end{center}
+
+\vspace{1\baselineskip}
+
+上の基本式を全薄肉レンズ分(1 $\to$ N)まで足し合わせると、
+
+\begin{align*}
+& u'_1 + u'_2 + \dots + u'_N = u_1 + u_2 + \dots + u_N - \sum_{i=1}^{N} y_{ai}\Phi_{i} \\
+& \iff u'_N = u_1 - \sum_{i=1}^{N} y_{ai}\Phi_{i} = u_1 - y_{a1} \sum_{i=1}^{N} \frac{y_{ai}}{y_{a1}}\Phi_{i} \\
+\end{align*}
+
+光学系の合成パワー $\Phi$ は、$ u_{1} = 0 $ とし、
+
+\begin{equation*}
+u'_N = - y_{a1} \Phi
+\end{equation*}
+
+で求められるので、
+
+\begin{equation*}
+\Phi = \sum_{i=1}^{N} \frac{y_{ai}}{y_{a1}}\Phi_{i} = y_{a1} \sum_{i=1}^{N} y_{ai} \Phi_{i}
+\end{equation*}
+
+となる。
+
+
+
+
+
+
+\section{}
+TELEPHOTO LENS SYSTEM に対し、近軸光線追跡を行うと以下のような結果を得る。
+但し、入力光線の高さは簡単のために 1 とした。
+
+\vspace{1\baselineskip}
+
+\begin{center}
+\begin{tabular}{l|cccccc}
+	& & LENS1 & & LENS2 & & IMA \\ \hline
+Power & & $\Phi_1$ & & $\Phi_2$ & & \\
+Thickness & & & 150 & & 50 & \\ \hline
+Ray height & 1 & 1 & & 1-150$\Phi_1$ & & $y_3 = 0$ \\
+u & 0 & & $-\Phi_1$ & & $-\Phi_1 - \Phi_2 + 150 \Phi_1 \Phi_2$ & \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{2\baselineskip}
+
+上記表より、
+\begin{equation*}
+y_3 = 0 = 1-200\Phi_1-50\Phi_2+7500\Phi_1\Phi_2
+\end{equation*}
+
+また、近軸有効焦点距離 $ EFL=550[mm] $ より、
+\begin{align*}
+0 &= 1+EFL \cdot (-\Phi_1 -\Phi_2 + 150 \Phi_1 \Phi_2) \\
+  &= 1 - 550\Phi_1 - 550\Phi_2 - 550 \cdot 150 \Phi_1 \Phi_2
+\end{align*}
+
+上記 2 式より、
+\begin{align*}
+\Phi_1 &= \frac{1}{165} \\
+\Phi_2 &= -\frac{7}{150}
+\end{align*}
+と分かる。
+
+
+
+
+
+
+
+\section{}
+問 2 と同様に、近軸光線追跡を行うと、下記表の結果を得る。
+
+\vspace{1\baselineskip}
+
+\begin{center}
+\begin{tabular}{l|cccccc}
+	& & MIRROR1 & & MIRROR2 & & IMA(Focal Point) \\ \hline
+Power & & $-\frac{1}{200}$ & & $-\frac{1}{50}$ & & \\
+Thickness & & & -80 & & d(=100) & \\ \hline
+Ray height & 1 & 1 & & $\frac{2}{10}$ & & 0 \\
+u & 0 & & $\frac{1}{100}$ & & $-\frac{1}{500}$ & \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{1\baselineskip}
+
+上記表結果より、
+\begin{equation*}
+EFL = -\frac{1}{-\frac{1}{500}} = 500 \; [mm]
+\end{equation*}
+と分かる。
+
+\newpage
+
+
+
+
+
+\section{}
+題意の Triplet に対し、近軸光線追跡をおこなうと、次表の結果を得る。
+但し、$y_p$ 及び $u_p$ は、主光線(HFOV $ \sim 21$[deg] )の近軸光線高 及び 近軸光線角度の
+値を示す。
+
+\vspace{1\baselineskip}
+\begin{center}
+\begin{tabular}{l|cccccccc}
+	& & Lens1 & & Lens2 & & Lens3 & & IMA(Focal Point) \\ \hline
+Power & & 0.16537 & & -0.28698 & & 0.18208 & & \\
+Thickness & & & 1.46850 & & 1.48680 & & 8.34346 & \\ \hline
+y & 1.5 & 1.5 & & 1.135731 & & 1.251519 & & 0 \\
+u & 0 & & -0.248055 & & 0.077877 & & -0.150013 & \\ \hline
+y$_p$ & -0.8 & -0.8 & & -0.071189 & & 0.636329 & & 3.639725 \\
+u$_p$ & 0.364 & & 0.496296 & & 0.475866 & & 0.360003 & \\ \hline
+\end{tabular}
+\end{center}
+\vspace{1\baselineskip}
+
+Seidel収差 及び 軸上色収差 は、Seidelの相加定理より、各レンズの収差を足し合わせたものと、
+全体の収差が等しくなることが分かっている。
+よって、軸上色収差(TAchC$= \frac{y^2 \Phi}{V u'_k} $)は、
+
+\begin{center}
+\begin{align*}
+\mathrm{TAchC}_1 &= \frac{(1.5)^2 \cdot 0.16537}{60.3 \cdot (-0.150013)} = -0.041137 \\
+\mathrm{TAchC}_2 &= \frac{(1.135731)^2 \cdot -0.28698}{36.2 \cdot (-0.150013)} = 0.068171 \\
+\mathrm{TAchC}_3 &= \frac{(1.251519)^2 \cdot 0.18208}{60.3 \cdot (-0.150013)} = -0.031530 \\
+\\ \hline
+\\
+\mathrm{TAchC} &= \mathrm{TAchC}_1 + \mathrm{TAchC}_2 + \mathrm{TAchC}_3 = -0.00450
+\end{align*}
+\end{center}
+
+となる。パワーの正負により色収差の極性が逆転し、打ち消しあって補正されていることがみてとれる。
+同様に、倍率色収差(TchC$= \frac{y^2 \Phi}{V u'_k} \cdot \frac{y_p}{y}$)も求めると、
+
+\begin{center}
+\begin{align*}
+\mathrm{TchC}_1 &= \frac{(1.5)^2 \cdot 0.16537}{60.3 \cdot (-0.150013)} \cdot \frac{-0.8}{1.5} = 0.021940 \\
+\mathrm{TchC}_2 &= \frac{(1.135731)^2 \cdot -0.28698}{36.2 \cdot (-0.150013)} \cdot \frac{-0.071189}{1.135731}= -0.004273 \\
+\mathrm{TchC}_3 &= \frac{(1.251519)^2 \cdot 0.18208}{60.3 \cdot (-0.150013)} \cdot \frac{0.636329}{1.251519}= -0.016031 \\
+\\ \hline
+\\
+\mathrm{TchC} &= \mathrm{TchC}_1 + \mathrm{TchC}_2 + \mathrm{TchC}_3 = 0.001636
+\end{align*}
+\end{center}
+
+となる。倍率色収差の場合は、軸上色収差の場合と異なり、主光線の光線高も寄与するため、
+レンズのパワー極性だけでは、収差極性が決まらないことに注意したい。
+本例では、レンズ1 と レンズ2、3 の収差が打ち消しあうことで補正されている。
+
+
+
+
+
+
+
+\section{}
+以下において、Seidel の 5 収差の略称として、SA(球面収差)、COMA(コマ収差)、As(非点収差)、PC(像面湾曲)、Dis(歪曲収差)を使用する。像面湾曲として、Field Curvature でなく、Petzval Curvature を採用していることに注意。\\
+\\
+(1) \; As \\
+(2) \; Dis \; (COMA) \\
+(3) \; Dis \\
+(4) \; SA \\
+(5) \; COMA, \; As, \; Dis \; (但し、Field Curvature を採用した場合は、FC も含まれる。) \\
+(6) \; PC \\
+(7) \; SA, \; As, \; PC \\
+(8) \; SA \\
+(9) \; SA, \; As, \; PC \\
+(10) \; COMA \\
+(11) \; COMA \\
+(12) \; PC \\
+(13) \; Dis \\
+(14) \; PC \\
+(15) \; SA \\
+(16) \; COMA \\
+(17) \; As, \; PC \\
+(18) \; Dis \\
+
+
+
+
+
+
+\section{}
+
+\subsection{}
+近軸光線追跡の結果より、近軸有効焦点距離 と 開口数は、それぞれ
+\begin{align*}
+EFL &= \frac{2.35}{0.117487} \sim 20 \; [mm] \\
+\mathrm{F-number} &= \frac{EFL}{EPD} = \frac{20}{2.35 \times 2} \sim 4.255
+\end{align*}
+但し、$EPD$ は入射瞳直径とする。
+
+\subsection{}
+薄肉レンズ 2 枚よりなるレンズとして、題意のダブレットを扱ってもよいが、
+肉厚による収差誤差が発生するので、各面ごとの球面収差の寄与を求めるほうが精度がよい。
+以下は、C 言語によって記述された、各面ごとの球面収差の寄与を計算し、規格化された各瞳径位置
+(本例では 10 分割 : 0.1, 0.2, ....,0.9,1)
+における縦球面収差を求めるソースコードである。
+
+\begin{verbatim}
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<math.h>
+#include<process.h>
+
+
+int main(void){
+
+	int j,k,l;
+	float C[20],n[20],y[20],u[20],i[20];
+	float TSC[20],LSC[20];
+	float LSA[15];
+	FILE *fp1;
+
+
+	k=10;
+
+	C[1]=0.0842074;
+	C[2]=-0.09582005;
+	C[3]=-0.02502111;
+
+	n[1]=1;
+	n[2]=1.582514;
+	n[3]=1.765867;
+	n[4]=1;
+
+	y[1]=2.35/(float)k;
+	y[2]=2.189749/(float)k;
+	y[3]=2.123207/(float)k;
+
+	u[0]=0/(float)k;
+	u[1]=-0.072841/(float)k;
+	u[2]=-0.043492/(float)k;
+	u[3]=-0.117487/(float)k;
+
+
+	for(l=1;l<=k;l++){
+
+	for(j=1;j<=3;j++){
+	i[j]=(l*y[j])*C[j]+(l*u[j-1]);
+	printf("i[%d] = %f \t (n*i)[%d] = %f \n",j,i[j],j,n[j]*i[j]);
+	}
+
+	printf("\n");
+	
+	/*	CALCULATION OF TSC AND LSC	*/
+	for(j=1;j<=3;j++){
+		TSC[j]=n[j]*(n[j+1]-n[j])/(2*n[j+1])*(l*y[j])*((l*u[j])+i[j])*i[j]*i[j]/(l*u[3]);
+		LSC[j]=-TSC[j]/(l*u[3]);
+		printf("TSC[%d]=%f \t LSC[%d]=%f \n",j,TSC[j],j,LSC[j]);
+	}
+
+	printf("\n");
+
+	LSA[l]=LSC[1]+LSC[2]+LSC[3];
+	
+	}
+
+
+	fp1=fopen("2_1_RESULT.txt","w");
+	if(fp1==NULL){
+		exit(-1);
+	}
+
+
+	for(l=1;l<=k;l++){
+	printf("%f \t %f \n",(float)l/k,LSA[l]);
+	fprintf(fp1,"%f %f \n",(float)l/k,LSA[l]);
+	}
+
+	fclose(fp1);
+	system("2_1_RESULT.txt");
+
+	getch();
+	return 0;
+
+}
+
+\end{verbatim}
+
+\vspace{1cm}
+
+次数値は、上記プログラムを実行した際に得られるものであり、
+第 1 列が規格化瞳径 $\rho$を、第 2 列が縦球面収差(LSA)の値を示す。
+
+\begin{verbatim}
+0.100000 -0.000217 
+0.200000 -0.000867 
+0.300000 -0.001951 
+0.400000 -0.003468 
+0.500000 -0.005419 
+0.600000 -0.007804 
+0.700000 -0.010622 
+0.800000 -0.013874 
+0.900000 -0.017559 
+1.000000 -0.021678 
+\end{verbatim}
+
+図\ref{LSA}は、計算結果をグラフにしたものである。\\
+問題で与えられている厳密な縦球面収差プロットと比較すると、
+3次球面収差だけでは、Marginal 側 ($ 0.5 \le \rho$)で大きくずれることが分かる。
+これは、高次の球面収差(例えば、5次球面収差)の寄与が大きく
+なっているためであると考えられる。\\
+このように、ダブレットで設計可能な程度の開口数であっても、3 次球面収差だけでなく
+5 次球面収差を考慮する必要があるため、現在では強力な自動最適化設計ツールを使用
+することが普通となっている。
+
+\begin{center}
+\begin{figure}
+\includegraphics[bb=35 35 430 315,clip]{2_1_result.eps}
+\caption{縦球面収差}
+\label{LSA}
+\end{figure}
+\end{center}
+
+\newpage
+
+\subsection{}
+求めるべきレンズのパラメータを、第 1 面曲率半径 $r_1$、第 2 面曲率半径 $r_2$、第 1 面非球面係数第 4 項 $A_4$
+とする。\\
+(コーニック定数は、非球面係数の高次項を含むため、題意の 3 次収差を補正するという観点上、ゼロとした。)\\
+近軸有効焦点距離の条件より、
+\begin{equation*}
+\frac{1}{4.5} = (1.486-1) \cdot (\frac{1}{r_1}-\frac{1}{r_2})
+\end{equation*}
+
+レンズを薄肉として計算してよいため、G-sums equation が利用できて、
+横球面収差を $TSC$、横サジタルコマ収差を $CC$とすると、次式のように
+各 3 次収差が計算できる。
+
+
+\begin{align*}
+c_1 &= \frac{1}{r_1} \\
+c_2 &= \frac{1}{r_2} \\
+c &= c_1 - c_2 = \frac{1}{4.5 \times 0.486} = 0.457247 \\
+\\
+TSC &= \frac{y^4}{u'_k} (G_1 c^3 - G_2 c^2 c_1 + G_4 c {c_1}^2) \\
+CC &= -h' y^2 (0.25 G_5 c c_1 - G_8 c^2) \\
+\\
+h' &= (1 \cdot \frac{\pi}{180}) \cdot 4.5 \\
+G_1 &= \frac{n^2(n-1)}{2} = 0.5366 \\
+G_2 &= \frac{(2n+1)(n-1)}{2} = 0.9652 \\
+G_4 &= \frac{(n+2)(n-1)}{2n} = 0.5701 \\
+G_5 &= \frac{2(n+1)(n-1)}{n} = 1.6261 \\
+G_8 &= \frac{n(n-1)}{2} = 0.3611
+\end{align*}
+
+$c_1$、$c_2$、$c$ は各曲率を、$y$ は入射光線高(入射瞳半径)を、$u_{k}'$は、像面における軸上光線の
+角度を、$h'$ は主光線の像面における光線高さ(像高)をあらわしている。\\
+\\
+また、非球面係数 $A_4$ により発生する収差をそれぞれ、$TSC_{asp}$、$CC_{asp}$ とすると、
+次式にようにかける。
+
+\begin{align*}
+TSC_{asp} &= \frac{4 A_4 (1.486-1)}{u_{k}'} \cdot y^4 \\
+CC_{asp} &= \frac{4 A_4 (1.486-1)}{u_{k}'} \cdot y^3 y_p
+\end{align*}
+
+ここで、レンズが薄肉であり、かつ開口絞りでもあることから、$y_p = 0$となる。
+そのため、全式の非球面係数 $A_4$ によるコマ収差への寄与 $CC_{asp}$ はゼロと考えることができる。\\
+そこで、まずは、$CC=0$ より、
+\begin{align*}
+0 &= 0.25 G_5 c c_1 - G_8 c^2 \\
+\Leftrightarrow c_1 &= \frac{G_8 c}{0.25 G_5} = 0.4062 \\
+\Leftrightarrow c_2 &= c_1 - c = -0.0511 
+\end{align*}
+
+と、両面の曲率が求まる。\\
+
+次に、球面収差の条件より、
+\begin{align*}
+0 &= G_1 c^3 - G_2 c^2 c_1 + G_4 c {c_1}^2 + 4 A_4 (1.486-1) \\
+\Leftrightarrow A_4 &= - \frac{G_1 c^3 - G_2 c^2 c_1 + G_4 c {c_1}^2}{4(1.486-1)} \\
+&= -0.006347
+\end{align*}
+
+と、非球面係数 $A_4$ が求まる。
+結果をまとめると、
+\begin{center}
+\begin{tabular}{c|cc}
+& $r$ & $A_4$ \\ \hline
+S1 & 2.462 & -0.006347 \\
+S2 & -19.569 & \\ \hline 
+\end{tabular}
+\end{center}
+となる。
+
+
+
+
+
+\section{}
+\subsection{}
+波面収差($\Phi$)と横収差($TA$)の関係は、規格化射出瞳径を $\rho$ とすると、
+\begin{align*}
+TA = \frac{1}{-NA} \frac{d \Phi}{d \rho} \\
+\Phi = 4 \cdot \rho^4 \; [\lambda]
+\end{align*}
+よって、
+求めるべき、横球面収差量 $\epsilon_y = TSA$ は、
+\begin{equation*}
+TSA = \frac{1}{-0.5} \cdot 4 \cdot 4 \cdot {1^3} = -32 \; [\lambda]
+\end{equation*}
+最大値は、極性が逆の時であり、$ 32[\lambda] = 18.8[\mu m]$
+
+\subsection{}
+波面収差において、$D \rho^2$だけ、Defocus させた時の合成波面収差$\Phi'$は、
+
+\begin{equation*}
+\Phi' = 4 \cdot \rho^4 + D \cdot \rho^2
+\end{equation*}
+
+となる。
+波面収差の平均値を $\bar{\Phi}$、標準偏差を $\Delta \Phi$ とすると、
+
+\begin{align*}
+\bar{\Phi} &= \int \int \Phi \; \rho d\rho d\theta \\
+\Delta \Phi^2 &= \frac{\int \int ({\Phi} - \bar{\Phi})^2 \; \rho d\rho d\theta}{\int \int \rho d\rho d\theta} \\
+&= \frac{1}{12} \cdot (4+D)^2 + \dots
+\end{align*}
+
+と計算できる。
+よって、波面収差の標準偏差(RMS WAVEFRONT)が最小になるのは、$D = -4$ の時となる。\\
+これは、縦収差になおすと、像面の移動量 $\delta$ と同値であり、
+
+\begin{align*}
+\delta = \frac{2 \cdot (-4) \cdot (1)^2}{(-0.5)^2} = -32 [\lambda] \sim -18.8 [\mu m]
+\end{align*}
+
+像面をレンズに近づく方向へ、18.8 $\mu m$ 程動かすことで、最小の RMS WAVEFRONT を得ることが
+できる。
+
+\subsection{}
+
+Defocus させることによって新たに得られた波面収差 $\Phi'$ の 横収差量 $TA'$ は、
+\begin{align*}
+TA' &= \frac{1}{(-0.5)} \cdot \frac{d \Phi'}{d \rho} \\
+&= (-2) \cdot (16 {\rho}^3 - 8 {\rho}) = -16 \rho \cdot (2 {\rho}^2 - 1)
+\end{align*}
+
+よって、横収差量の最大値は、$\rho = -1 $ の時であり、$16 [\lambda] = 9.4 [\mu m]$ の時となる。\\
+また、横収差は、$\rho = \frac{1}{\sqrt{2}} = 0.707 \cdot \rho$ の時にゼロとなっていることに注意したい。
+
+\end{document}

@@ -1,0 +1,86 @@
+\documentclass[a4j,10pt,oneside,openany]{jsbook}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{ascmac}
+\usepackage{makeidx}
+%
+%\makeindex
+%
+\newcommand{\diff}{\mathrm{d}}  %微分記号
+\newcommand{\divergence}{\mathrm{div}\,}  %ダイバージェンス
+\newcommand{\grad}{\mathrm{grad}\,}  %グラディエント
+\newcommand{\rot}{\mathrm{rot}\,}  %ローテーション
+%
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{44\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.6in}
+%
+\title{{\Huge \textbf{Dr.Hongoの数理科学ゼミ　第165問}}\\}
+\author{Yuji Hiramatsu}
+\date{\today}
+%
+%
+%
+\begin{document}
+%
+%
+\maketitle
+%\frontmatter
+%\tableofcontents
+%
+%
+%\mainmatter
+
+%\chapter{...}
+%\begin{abstract}
+%...
+%...
+%\end{abstract}
+
+{\Huge 165問　解答}
+
+\vspace{3\baselineskip}
+
+{\Large (1)}
+\\
+\\
+題意より、$f(n)$は、$_{n}C_{1},\;\; _{n}C_{2},\;\; _{n}C_{3},\;\; \dots ,\;\; _{n}C_{n},\;\; 0 $において、\\
+初めて偶数になる項の番目であり、ここで、$f(n)=k$とおく。\\
+また、同様に、$f(2n+1)$は、$_{2n+1}C_{1},\;\; _{2n+1}C_{2},\;\; _{2n+1}C_{3},\;\; \cdots ,\;\; _{2n+1}C_{2n+1},\;\; 0 $において、\\
+初めて偶数となる項の番目であり、$f(2n+1)=2k$となることを証明すればよい。\\
+ところで、$f(n)=k$の時、k番目の数列は、
+\[ _{n}C_{k} = \frac{n!}{k! \; (n-k)!} = \frac{n \cdot (n-1) \cdot {n-2} \cdots (n-k+1)}{k \cdot (k-1) \cdots 2 \cdot 1} \]
+と書くことができる。\\
+ここで、分子及び分母の両方に、$2^{k}$をかけると、
+\[ _{n}C_{k} = \frac{2n \cdot (2n-2) \cdot (2n-4) \cdots (2n-2k+2)}{2k \cdot (2k-2) \cdots 4 \cdot 2} \]
+となる。\\
+上式の分子に奇数、$(2n+1) \cdot (2n-1) \cdots (2n-2k+5) \cdot (2n-2k+3)$を、\\
+分母に奇数、$(2k-1) \cdot (2k-3) \cdots 3 \cdot 1$をかけると、\\
+\[ \frac{(2n+1) \cdot 2n \cdot (2n-1) \cdots (2n-2k+2)}{2k \cdot (2k-1) \cdots 3 \cdot 2 \cdot 1}=_{2n+1}C_{2k} \]
+となり、$_{n}C_{k}$が偶数である以上は、$_{2n+1}C_{2k}$も偶数である。\\
+$f(n)$に対応した数列においては、$k$番目より小さい項は奇数であり、$1\leqq i \leqq n-1$とし、上記と同様の操作をすると、\\
+\[\frac{2^{i}n!}{2^{i}i!(n-i)!}\cdot\frac{(2n+1) \cdot (2n-1) \cdot (2n-3) \cdots (2n-2i+5) \cdot (2n-2i+3)}{(2i-1) \cdot (2i-3) \cdots 3 \cdot 1}= _{2n+1}C_{2i}\]
+\[\frac{2^{i}n!}{2^{i}i!(n-i)!}\cdot\frac{(2n+1) \cdot (2n-1) \cdot (2n-3) \cdots (2n-2i+3) \cdot (2n-2i+1)}{(2i+1) \cdot (2i-1) \cdots 3 \cdot 1}= _{2n+1}C_{2i+1}\]
+となる。
+これらが、奇数であることは自明であり、また、$_{2n+1}C_{1}$は奇数であるので、
+$f(2n+1)$に対応した数列において、初めて偶数となる項の番目$f(2n+1)$は、$2k$番目であることが証明された。
+
+\vspace{1\baselineskip}
+
+{\Large (2)}
+\\
+\\
+(1)を繰り返し使用すると、$ \;\;  f(2015)= 2^{5} \cdot f(62) = 32 $
+
+%\begin{thebibliography}{20}
+% \bibitem{...}...
+%\end{thebibliography}
+
+\newpage
+%\printindex
+%
+%
+\end{document}
