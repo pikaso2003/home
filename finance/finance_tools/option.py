@@ -1,5 +1,5 @@
 __author__ = 'Maxwell'
-from math import log, sqrt, erf, exp
+from math import log, sqrt, erf, exp, pi
 
 
 def bcall(f, k, r, t, vol):
@@ -9,6 +9,15 @@ def bcall(f, k, r, t, vol):
     n2 = erf(d2 / sqrt(2)) / 2 + 0.5
     bcall = f * exp(-r * t) * n1 - k * exp(-r * t) * n2
     return bcall
+
+
+def BS(s, k, r, t, vol):
+    d1 = log(s / k) / (vol * sqrt(t)) + (r + vol ** 2 / 2) * sqrt(t) / vol
+    d2 = d1 - vol * sqrt(t)
+    n1 = erf(d1 / sqrt(2)) / 2 + 0.5
+    n2 = erf(d2 / sqrt(2)) / 2 + 0.5
+    bs = s * n1 - k * exp(-r * t) * n2
+    return bs
 
 
 class Caplet:
@@ -36,8 +45,16 @@ class Caplet:
         return self.pv
 
 
-a = Caplet(0.07, 0.08, 1, 0.2, 0.25, 0.069395, 10)
-print(a.calc_d1())
-print(a.calc_d2())
-# print(a.pv)
-print(a.calc())
+# Using B-S eq for calculating implied volatility
+
+
+def CalcImpliedVol(pv, s0, K, parity, sig0, t, r):
+    if parity > 0:
+        d1 = log(s0 / K) + (r + sig0 ** 2 / 2) * t
+        d1 /= sig0 * sqrt(t)
+        vega = s0 * sqrt(t) * exp(-d1 ** 2 / 2) / sqrt(2 * pi)
+        sigd = (pv - BS(s0, K, r, t, sig0)) / vega
+        return sigd
+    else:
+        exit()
+
