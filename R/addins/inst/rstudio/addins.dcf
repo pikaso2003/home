@@ -1,0 +1,4 @@
+Name: Reformat R Code
+Description: Reformat R code using 'formatR::tidy_source()'.
+Binding: reformatAddin
+Interactive: true
