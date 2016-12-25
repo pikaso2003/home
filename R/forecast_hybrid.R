@@ -21,8 +21,11 @@ cat('BoxCox lambda : ', BoxCox.lambda(uempmed)) # close to zero -> log transform
 
 
 # lambada = BoxCox lambda
+# you can include external regressor explanatory variables via a.args, e.args and others.
+# type "?hybridModel" for more detail.
 hm1 <- hybridModel(y = uempmed, models = c('aefnst'),
                    lambda = BoxCox.lambda(uempmed),
+                   a.args = NULL,
                    weights = 'cv.errors',
                    errorMethod = c('RMSE', 'MAE', 'MASE'),
                    verbose = TRUE)
